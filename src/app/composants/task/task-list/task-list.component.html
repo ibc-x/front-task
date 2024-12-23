@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h2>Liste des Taches</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary mb-3" (click)="createTask()">Créer une nouvelle tache</button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+                
+              <th>title</th>
+              <th>description</th>
+              <th>status</th>
+              <th>priority</th>
+              <th>dueDate</th>
+              <th>createDate</th>
+              <th>updatedDate</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (task of tasks; track task.id) {
+              <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.startDate }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.dueDate }}</td>
+                <td>{{ task.createdAt }}</td>
+                <td>{{ task.updatedAt }}</td>
+                <td class="text-end">
+                  <button class="btn btn-secondary me-2" (click)="editTask(task)">Modifier</button>
+                  <button class="btn btn-danger mr-2" (click)="deleteTask(task.id)">Supprimer</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

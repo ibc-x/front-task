@@ -1,0 +1,43 @@
+.register-form {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .register-form h2 {
+    text-align: center;
+  }
+  
+  .register-form div {
+    margin-bottom: 10px;
+  }
+  
+  .register-form label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

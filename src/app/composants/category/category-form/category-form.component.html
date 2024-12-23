@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <h2>Créer une nouvelle category</h2>
+    <form (ngSubmit)="saveCategory()">
+      <div class="form-group mb-2">
+        <label for="name">Nom du categories</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="category.name" name="name" required>
+      </div>
+      <div class="form-group mb-5">
+        <label for="description">Description du categorie</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="category.description" name="description" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary me-2">Valider</button>
+      <button type="button" class="btn btn-danger">Annuler</button>
+    </form>
+  </div>
+  

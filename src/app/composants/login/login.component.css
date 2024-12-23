@@ -1,0 +1,72 @@
+#pcontainer {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Assombrit légèrement l'arrière-plan sans être trop fort */
+}
+
+form {
+  background: rgba(255, 255, 255, 0.2); /* Légère transparence */
+  padding: 15px 25px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid #ffffff; /* Bordure fine pour plus de sobriété */
+}
+
+form label {
+  display: block;
+  margin: 8px 0 4px;
+  font-size: 14px;
+  color: #fff;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd; /* Bordure discrète */
+  border-radius: 4px;
+  color: #000;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+form button {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #bf0812;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('https://example.com/movie-theater.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5); /* Juste une légère réduction de la luminosité */
+}
