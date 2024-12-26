@@ -51,8 +51,9 @@ export class TaskListComponent implements OnInit {
   }
   
   editTask(task: any) {
-    // Implémenter la logique pour modifier une tâche
+    this.router.navigate(['tasks/'+task.id+'/edit'])
   }
+  
   createTask() {
     this.router.navigate(['tasks/new']);
   }

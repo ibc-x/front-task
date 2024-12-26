@@ -1,10 +1,9 @@
 #pcontainer {
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
   background-size: cover;
   background-position: center;
   color: #ffffff;
+  width: 100% !important;
 }
 
 .container {

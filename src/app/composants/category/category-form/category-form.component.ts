@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { ApiService } from '../../../core/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-form',
@@ -15,16 +16,30 @@ import { FormsModule } from '@angular/forms';
 export class CategoryFormComponent {
   @Input() category: any = {};
     @Input() isEditMode: boolean = false;
+  private router = inject(Router);
+    constructor(private apiService: ApiService, private route: ActivatedRoute) { }
   
-    constructor(private apiService: ApiService) { }
-  
-    ngOnInit(): void {}
+    ngOnInit(): void {
+      const categoryId = this.route.snapshot.paramMap.get('id');
+      if (categoryId) {
+        const id = Number(categoryId); // Convertir taskId en nombre
+        this.apiService.get<any>(`categories/${id}/edit`).subscribe({
+          next:(data)=>{
+            this.category = data;
+          },
+          error: (error)=>{
+            console.log(error);
+          }
+        });
+      }
+    }
   
     saveCategory() {
       if (this.isEditMode) {
         this.apiService.updateCategory(this.category.id, this.category).subscribe(
           () => {
-            //this.toastr.success('Projet mis à jour avec succès');
+          this.goBackList();
+           alert('Projet mis à jour avec succès');
           },
           (          error: any) => {
             console.error('Erreur lors de la mise à jour du projet', error);
@@ -34,7 +49,8 @@ export class CategoryFormComponent {
       } else {
         this.apiService.createCategory(this.category).subscribe(
           () => {
-            //this.toastr.success('Projet créé avec succès');
+            this.goBackList();
+           alert('Projet créé avec succès');
           },
           (          error: any) => {
             console.error('Erreur lors de la création du projet', error);
@@ -43,6 +59,11 @@ export class CategoryFormComponent {
         );
       }
     }
+
+    goBackList(){
+      this.router.navigateByUrl('categories');
+    }
+
   }
   
 

@@ -1,3 +1,4 @@
+import { AuthService } from './auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -32,9 +33,12 @@ export class AppComponent implements OnInit {
     } // Initialisation correcte
   };
 
-  constructor(private taskService: TaskService) { }
+  isConnected = false;
+
+  constructor(private taskService: TaskService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isConnected = this.authService.isAuthenticated();
     this.getTasks();
   }
 

@@ -1,0 +1,16 @@
+<p>task-comments works!</p>
+<div class="container mt-5">
+    <h2>Commentaires sur la Tâche</h2>
+    <div class="form-group">
+      <label for="comment">Ajouter un Commentaire</label>
+      <textarea class="form-control" id="comment" [(ngModel)]="newComment" name="comment" rows="3"></textarea>
+      <button class="btn btn-primary mt-2" (click)="addComment()">Ajouter</button>
+    </div>
+    <ul class="list-group mt-4">
+      <li class="list-group-item" *ngFor="let comment of comments">
+        {{ comment.text }}
+        <span class="float-right text-muted">{{ comment.date | date:'short' }}</span>
+      </li>
+    </ul>
+  </div>
+  

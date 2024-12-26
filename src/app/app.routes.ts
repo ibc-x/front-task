@@ -7,6 +7,8 @@ import { CategoryListComponent } from './composants/category/category-list/categ
 import { ProjectFormComponent } from './composants/project/project-form/project-form.component';
 import { TaskFormComponent } from './composants/task/task-form/task-form.component';
 import { CategoryFormComponent } from './composants/category/category-form/category-form.component';
+import { ProjectEditComponent } from './composants/project/project-edit/project-edit.component';
+import { TaskEditComponent } from './composants/task/task-edit/task-edit.component';
 
 
 
@@ -16,17 +18,18 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'tasks', component: TaskListComponent },
      { path: 'tasks/new', component: TaskFormComponent },
-    // { path: 'tasks/:id/edit', component: TaskEditComponent },
+    { path: 'tasks/:id/edit', component: TaskEditComponent },
     // { path: 'tasks/:id/delete', component: TaskDeleteComponent },
     // { path: 'tasks/reorder', component: TaskReorderComponent },
     // { path: 'tasks/:id/files', component: TaskFilesComponent },
     // { path: 'tasks/:id/comments', component: TaskCommentsComponent },
-     { path: 'projects', component: ProjectListComponent },
+    { path: 'projects', component: ProjectListComponent },
     { path: 'projects/new', component: ProjectFormComponent },
     // { path: 'projects/:id', component: ProjectDetailsComponent },
-    // { path: 'projects/:id/edit', component: ProjectEditComponent },
+     { path: 'projects/:id/edit', component: ProjectEditComponent },
      { path: 'categories', component: CategoryListComponent },
-    { path: 'categories/new', component: CategoryFormComponent },
+     { path: 'categories/new', component: CategoryFormComponent },
+     { path: 'categories/:id/edit', component: CategoryFormComponent },
     // { path: 'tags', component: TagListComponent },
     // { path: 'tags/new', component: TagFormComponent },
     // { path: 'search', component: SearchFilterComponent },

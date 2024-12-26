@@ -1,4 +1,3 @@
-<p>projet-edit works!</p>
 <div class="container mt-5">
     <h2>Modifier le Projet</h2>
     <form (ngSubmit)="updateProject()">
@@ -7,10 +6,18 @@
         <input type="text" class="form-control" id="name" [(ngModel)]="project.name" name="name" required>
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" [(ngModel)]="project.description" name="description" required></textarea>
+        <label for="name">Date du début</label>
+        <input type="date" class="form-control" id="startDate" [(ngModel)]="project.startDate" name="startDate" required>
       </div>
-      <button type="submit" class="btn btn-primary">Mettre à Jour</button>
+      <div class="form-group">
+        <label for="name">Date de fin</label>
+        <input type="date" class="form-control" id="endDate" [(ngModel)]="project.endDate" name="endDate" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" [(ngModel)]="project.description" name="description" rows="4" required></textarea>
+      </div>
+      <button type="submit"  class="btn btn-primary me-2" [disabled]="project.name===undefined" >Valider</button>
+      <button type="button" (click)="goBackList()" class="btn btn-danger">Annuler</button>
     </form>
-  </div>
   

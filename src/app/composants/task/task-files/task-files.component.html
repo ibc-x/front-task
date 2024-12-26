@@ -1,0 +1,12 @@
+<p>task-files works!</p>
+<div class="container mt-5">
+    <h2>Ajouter des Images et des Fichiers aux Tâches</h2>
+    <form (ngSubmit)="uploadFiles()">
+      <div class="form-group">
+        <label for="file">Choisir des Fichiers</label>
+        <input type="file" class="form-control-file" id="file" (change)="onFileSelected($event)" multiple>
+      </div>
+      <button type="submit" class="btn btn-primary">Télécharger</button>
+    </form>
+  </div>
+  

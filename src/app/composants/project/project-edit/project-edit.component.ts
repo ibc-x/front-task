@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '@core/services/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { ApiService } from '../../../core/services/api.service';
 
 @Component({
   selector: 'app-project-edit',
@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
       FormsModule // Ajoutez ceci pour utiliser NgIf et d'autres directives communes
   ],
   templateUrl: './project-edit.component.html',
-  styleUrls: ['./project-edit.component.scss']
+  styleUrls: ['./project-edit.component.css']
 })
 export class ProjectEditComponent implements OnInit {
   project: any = {};
@@ -21,7 +21,7 @@ export class ProjectEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
-    private toastr: ToastrService
+  //  private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -37,11 +37,11 @@ export class ProjectEditComponent implements OnInit {
         },
         error => {
           console.error('Erreur lors du chargement du projet', error);
-          this.toastr.error('Erreur lors du chargement du projet');
+         alert('Erreur lors du chargement du projet');
         }
       );
     } else {
-      this.toastr.error('Invalid project ID.');
+     alert('Invalid project ID.');
     }
   }
 
@@ -50,16 +50,19 @@ export class ProjectEditComponent implements OnInit {
     if (id > 0) {
       this.apiService.updateProject(id, this.project).subscribe(
         data => {
-          this.toastr.success('Projet mis à jour avec succès');
-          this.router.navigate(['/projects', id]);
+         alert('Projet mis à jour avec succès');
+          this.goBackList();
         },
         error => {
           console.error('Erreur lors de la mise à jour du projet', error);
-          this.toastr.error('Erreur lors de la mise à jour du projet');
+         alert('Erreur lors de la mise à jour du projet');
         }
       );
     } else {
-      this.toastr.error('Invalid project ID.');
+     alert('Invalid project ID.');
     }
+  }
+  goBackList(){
+    this.router.navigateByUrl('projects');
   }
 }

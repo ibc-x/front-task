@@ -1,0 +1,58 @@
+/* Conteneur principal */
+.container {
+    margin-top: 2rem;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre */
+  h2 {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Message d'alerte */
+  .alert {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  /* Champs désactivés */
+  input[disabled],
+  textarea[disabled] {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style des boutons */
+  .btn {
+    width: 45%;
+    margin: 0.5rem;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  

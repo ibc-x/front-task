@@ -1,0 +1,16 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    border-radius: 20px;
+  }
+  
+  .list-group-item {
+    transition: background-color 0.3s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  

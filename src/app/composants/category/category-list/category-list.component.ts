@@ -43,7 +43,7 @@ export class CategoryListComponent implements OnInit {
   }
 
   editCategory(category: Category) {
-    // Logique pour modifier la catégorie
+    this.router.navigate(['categories/'+category.id+'/edit']);
   }
 
   deleteCategory(id: number) {

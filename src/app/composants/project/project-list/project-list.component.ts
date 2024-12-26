@@ -51,11 +51,11 @@ export class ProjectListComponent implements OnInit {
   }
 
   editProject(project: any) {
-    // Implémenter la logique pour modifier un projet
+    this.router.navigate(['projects/'+project.id+'/edit']);
   }
 
   createProject() {
-    this.router.navigate(['projects/new'])
+    this.router.navigate(['projects/new']);
     // Implémenter la logique pour créer un nouveau projet
   }
 }

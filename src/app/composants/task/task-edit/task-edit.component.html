@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Modifier la tâche</h2>
+  
+    <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)" class="form-group">
+      
+      <div class="form-group">
+        <label for="title">Nom de la Tache</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="task.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description de la tache</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="task.description" name="description" required>
+      </div>
+      <div class="form-group">
+        <label for="priority">Priorité de la tache</label>
+        <input type="text" class="form-control" id="priority" [(ngModel)]="task.priority" name="priority" required>
+      </div>
+      <div class="form-group">
+        <label for="createDate">Date de creation de la tache</label>
+        <input type="date" class="form-control" id="createDate" [(ngModel)]="task.createDate" name="createDate" required>
+      </div>
+      <div class="form-group mb-5">
+        <label for="dueDate">Date d'echeance de la tache</label>
+        <input type="date" class="form-control" id="dueDate" [(ngModel)]="task.dueDate" name="dueDate" required>
+      </div>
+      <button type="submit"  class="btn btn-primary me-2" [disabled]="task.title===undefined" >Valider</button>
+      <button type="button" (click)="goBackList()" class="btn btn-danger">Annuler</button>
+    </form>
+  </div>
+  
